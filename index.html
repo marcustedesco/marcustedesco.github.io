@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marcus's Page</title>
+<title>Marcus's Adventure</title>
 <style>
     body {
         height: 100vh;
@@ -11,32 +11,52 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(270deg, #6a11cb, #2575fc);
-        background-size: 400% 400%;
+        background: linear-gradient(270deg, #1a2a6c, #b21f1f, #fdbb2d);
+        background-size: 600% 600%;
         animation: gradientAnimation 15s ease infinite;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: white;
         text-align: center;
     }
 
+    .container {
+        animation: scaleIn 1s both;
+    }
+
     h1 {
-        font-size: 2.5em;
+        font-size: 5em;
         margin: 0;
         padding: 0;
-        animation: textGlow 1.5s ease-in-out infinite alternate;
+        color: #ffeb3b;
+        animation: textGlow 1.5s ease-in-out infinite alternate, shake 0.5s infinite;
     }
 
     p {
-        font-size: 1.5em;
+        font-size: 2em;
         margin: 10px 0 0;
         font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
     }
 
-    .highlight {
-        color: #ffeb3b;
-        text-shadow: 0 0 10px #ffeb3b;
+    .emphasis {
+        display: block;
+        font-style: italic;
+        animation: pulse 2s infinite;
+    }
+
+    .time-travel {
+        display: inline-block;
+        animation: glitch 1s infinite;
+    }
+
+    @keyframes scaleIn {
+        from {
+            transform: scale(0);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
     }
 
     @keyframes gradientAnimation {
@@ -47,21 +67,55 @@
 
     @keyframes textGlow {
         from {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffeb3b;
         }
         to {
-            text-shadow: 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+            text-shadow: 0 0 20px #fff, 0 0 30px #ffeb3b;
         }
+    }
+
+    @keyframes shake {
+        0% { transform: translate(1px, 0px); }
+        10% { transform: translate(-1px, 0px); }
+        20% { transform: translate(1px, 0px); }
+        30% { transform: translate(-1px, 0px); }
+        40% { transform: translate(1px, 0px); }
+        50% { transform: translate(-1px, 0px); }
+        60% { transform: translate(1px, 0px); }
+        70% { transform: translate(-1px, 0px); }
+        80% { transform: translate(1px, 0px); }
+        90% { transform: translate(-1px, 0px); }
+        100% { transform: translate(1px, 0px); }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes glitch {
+        0% { transform: skew(0deg); }
+        10% { transform: skew(20deg); }
+        20% { transform: skew(-20deg); }
+        30% { transform: skew(20deg); }
+        40% { transform: skew(-20deg); }
+        50% { transform: skew(10deg); }
+        60% { transform: skew(-10deg); }
+        70% { transform: skew(20deg); }
+        80% { transform: skew(-20deg); }
+        90% { transform: skew(20deg); }
+        100% { transform: skew(-20deg); }
     }
 </style>
 </head>
 <body>
-    <div>
+    <div class="container">
         <p>HELLO WORLD, MY NAME IS</p>
-        <h1 class="highlight">MARCUS</h1>
-        <p>SOFTWARE ENGINEER,</p>
-        <p>WORLD EXPLORER &</p>
-        <p>TIME TRAVEL ENTHUSIAST</p>
+        <h1>MARCUS</h1>
+        <p class="emphasis">SOFTWARE ENGINEER,</p>
+        <p class="emphasis">WORLD EXPLORER &</p>
+        <p class="emphasis time-travel">TIME TRAVEL ENTHUSIAST</p>
     </div>
 </body>
 </html>
